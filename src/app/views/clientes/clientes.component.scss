@@ -1,0 +1,147 @@
+/* ==== FORMULARIO CONTENEDOR ==== */
+.formulario-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 1px solid #e5e5e5;
+  border: 2px solid #007bff;
+
+  h2 {
+   text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 25px;
+    width: 100%;
+
+    label {
+      font-weight: 500;
+      color: #444;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 0.95rem;
+      transition: border 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0,123,255,0.3);
+      }
+    }
+
+    button {
+      grid-column: span 2;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button[type="submit"] {
+      background: #007bff;
+      color: #fff;
+
+      &:hover {
+        background: #0056b3;
+      }
+    }
+
+    button[type="button"] {
+      background: #6c757d;
+      color: #fff;
+
+      &:hover {
+        background: #5a6268;
+      }
+    }
+  }
+}
+
+/* ==== TABLA ==== */
+.clientes-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
+
+  thead {
+    background: #007bff;
+    color: #fff;
+    text-align: left;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+
+  tbody tr:hover {
+    background: #f1f5ff;
+  }
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* ==== BOTONES DE ACCIONES EN TABLA ==== */
+.clientes-table button {
+  border: none;
+  padding: 6px 12px;
+  margin: 2px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-edit {
+  background: #868987;
+  color: #fff;
+
+  &:hover {
+    background: #868987;
+  }
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: #fff;
+
+  &:hover {
+    background: #b02a37;
+  }
+}
+
+

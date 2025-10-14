@@ -1,0 +1,69 @@
+<div class="dashboard-container">
+  <h2>INFORMACION</h2>
+
+    <!-- Tarjetas de resumen -->
+<div class="cards-container fade-in">
+    <div class="card">
+      <h3>Total Global</h3>
+      <p>{{ controller.totalCafe | number:'1.2-2' }} qq</p>
+    </div>
+    <div class="card">
+      <h3>Total del Día</h3>
+      <p>{{ controller.totalDia | number:'1.2-2' }} qq</p>
+    </div>
+  </div>
+
+  <!-- Gráfico por tipo  -->
+  <div class="card2">
+  <h3>Café entregado por tipo</h3>
+  <canvas baseChart
+    [data]="{
+      labels: controller.cafePorTipoLabels,
+      datasets: [{
+        data: controller.cafePorTipoData,
+        backgroundColor: [
+          '#800000',  
+          '#4CAF50',  
+          '#FF5722',  
+          '#795548'   
+        ]
+      }]
+    }"
+    [type]="'pie'">
+  </canvas>
+</div>
+
+  <!-- Gráfico de pastel 
+   <h3>Cantidad de cafe </h3>
+  <div class="card" *ngIf="controller.totalCafe > 0; else noData fade-in">
+    <canvas baseChart
+      [data]="{
+        labels: ['Total Café Entregado'],
+        datasets: [{ data: [controller.totalCafe], backgroundColor: ['#4CAF50'] }]
+      }"
+      
+      [type]="'bar'">
+    </canvas>
+  </div> -->
+
+  <!-- Gráfico de barras -->
+   <h3>Café entregado por mes</h3>
+  <div class="chart-box" *ngIf="controller.cafePorMesData.length > 0 fade-in">
+    
+    <canvas baseChart
+      [data]="{
+        labels: controller.cafePorMesLabels,
+        datasets: [{
+          data: controller.cafePorMesData,
+          label: 'Café (qq)',
+          backgroundColor: '#2196F3'
+        }]
+      }"
+      [type]="'bar'">
+    </canvas>
+  </div>
+
+  <ng-template #noData>
+    <p>No hay datos disponibles</p>
+  </ng-template>
+</div>

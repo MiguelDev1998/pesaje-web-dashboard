@@ -1,0 +1,65 @@
+<div class="formulario-container">
+  <h2>Agregar Cliente</h2>
+
+  <form (ngSubmit)="controller.guardarCliente()">
+    <div class="columna">
+    <label>Primer Nombre:</label>
+    <input type="text" [(ngModel)]="controller.cliente.primer_nombre" name="primerNombre" required />
+
+    <label>Segundo Nombre:</label>
+    <input type="text" [(ngModel)]="controller.cliente.segundo_nombre" name="segundoNombre" />
+
+    <label>Primer Apellido:</label>
+    <input type="text" [(ngModel)]="controller.cliente.primer_apellido" name="primerApellido" required />
+
+    <label>Segundo Apellido:</label>
+    <input type="text" [(ngModel)]="controller.cliente.segundo_apellido" name="segundoApellido" />
+    </div>
+    <div class="columna">
+    <label>DPI:</label>
+    <input type="text" [(ngModel)]="controller.cliente.dpi" name="dpi" required />
+
+    <label>Dirección:</label>
+    <input type="text" [(ngModel)]="controller.cliente.direccion" name="direccion" required />
+
+    <label>Teléfono:</label>
+    <input type="text" [(ngModel)]="controller.cliente.telefono" name="telefono" required />
+
+    <label>Correo:</label>
+    <input type="email" [(ngModel)]="controller.cliente.correo" name="correo" required />
+    </div>
+     <button type="submit">{{ controller.editando ? 'Actualizar' : 'Guardar Cliente' }}</button>
+    <button type="button" *ngIf="controller.editando" (click)="cancelarEdicion()">Cancelar</button>
+  </form>
+</div>
+
+<hr />
+
+<h3>Listado de Clientes</h3>
+<table class="clientes-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre Completo</th>
+      <th>DPI</th>
+      <th>Dirección</th>
+      <th>Teléfono</th>
+      <th>Correo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of controller.clientes">
+      <td>{{ c.id }}</td>
+      <td>{{ c.primer_nombre }} {{ c.segundo_nombre }} {{ c.primer_apellido }} {{ c.segundo_apellido }}</td>
+      <td>{{ c.dpi }}</td>
+      <td>{{ c.direccion }}</td>
+      <td>{{ c.telefono }}</td>
+      <td>{{ c.correo }}</td>
+      <td>
+        <button class="btn-edit" (click)="editarCliente(c)">✏️ Editar</button>
+        <button class="btn-delete" (click)="eliminarCliente(c.id!)">🗑️ Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+<nav class="sidebar">
+  <ul>
+    <li [routerLinkActive]="['active']" [routerLink]="['/dashboard']">
+      <span class="icon">📊</span>
+      <span class="label" *ngIf="!mini">  Dashboard</span>
+    </li>
+    <li [routerLinkActive]="['active']" [routerLink]="['/pilotos']">
+      <span class="icon">🧑‍✈️</span>
+      <span class="label" *ngIf="!mini">Pilotos</span>
+    </li>
+    <li [routerLinkActive]="['active']" [routerLink]="['/clientes']">
+      <span class="icon">👥</span>
+      <span class="label" *ngIf="!mini">Clientes</span>
+    </li>
+    <li [routerLinkActive]="['active']" [routerLink]="['/recibos']">
+      <span class="icon">📋</span>
+      <span class="label" *ngIf="!mini">Recibos</span>
+    </li>
+    <li (click)="logout()" class="logout-option">
+      <span class="icon">❌</span>
+      <span class="label" *ngIf="!mini">Cerrar Sesión</span>
+  </ul>
+</nav>
+
+
+

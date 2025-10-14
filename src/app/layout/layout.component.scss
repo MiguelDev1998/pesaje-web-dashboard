@@ -1,0 +1,43 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden; // para evitar scroll en toda la página
+}
+
+.layout-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden; 
+}
+
+app-sidebar {
+  width: 160px;
+  transition: width 0.3s ease;
+  flex-shrink: 0;
+  height: 100vh; 
+  position: fixed; // se queda fijo
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding-top: 70px;
+}
+
+app-sidebar.mini {
+  width: 60px;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 160px; //deja espacio para el sidebar
+  overflow-y: auto;   // solo aquí se hace scroll
+  padding: 1rem;
+  background: white;
+}
+
+app-header {
+  position: sticky; //se queda fijo arriba dentro del main-content
+  top: 0;
+  z-index: 10;
+  background: #fff;
+}

@@ -1,0 +1,94 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // centra todo
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.chart-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 60%;       // no ocupa todo el ancho
+  max-width: 600px; // límite máximo
+  margin: 0 auto;
+
+  display: flex;              // hace que el contenido se alinee
+  justify-content: center;    // centra horizontalmente
+  align-items: center; 
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-direction: column;
+  width: 100%;
+  
+  
+}
+
+.card {
+  background: #1e2a38;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+ 
+
+  h3 {
+    margin: 0;
+    font-size: 2rem;
+    color: white;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.card2 {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 180px;
+  width: 40%;
+
+
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: black;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.50s ease-out forwards;
+}
