@@ -24,16 +24,23 @@ app-sidebar {
 }
 
 app-sidebar.mini {
-  width: 60px;
+  width: 55px;
 }
 
 .main-content {
   flex: 1;
-  margin-left: 63px; //deja espacio para el sidebar
+  margin-left: 160px; //deja espacio para el sidebar
   overflow-y: auto;   // solo aquí se hace scroll
   padding: 1rem;
   background: white;
 }
+
+/*@media (max-width: 768px) {
+  .main-content {
+    margin-left: 63px; // elimina espacio si el sidebar se oculta o se superpone
+    padding: 0.8rem;
+  }
+}*/
 
 app-header {
   position: sticky; //se queda fijo arriba dentro del main-content
@@ -41,3 +48,6 @@ app-header {
   z-index: 10;
   background: #fff;
 }
+
+
+
