@@ -22,7 +22,7 @@
       <tr *ngFor="let r of controller.recibos">
         <td>{{ r.recibo_id }}</td>
         <td>{{ r.numero_partida }}</td>
-        <td>{{ r.fecha | date:'dd/MM/yyyy' }}</td>
+        <td>{{ r.fecha | date:'dd/MM/yyyy':'America/Guatemala' }}</td>
         <td>{{ r.codigo }}</td>
         <td>{{ r.proveedor }}</td>
         <td>{{ r.saco_nylon }}</td>
